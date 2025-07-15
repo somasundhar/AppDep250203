@@ -21,9 +21,9 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage });
-app.get("*", (req,res) => {
-  res.sendFile("./client/build/index.html");
-});
+// app.get("*", (req,res) => {
+//   res.sendFile("./client/build/index.html");
+// });
 
 app.post("/login",upload.none(),async(req,res)=>{
     console.log(req.body);
@@ -69,9 +69,9 @@ let newUser = new user({
          res.json({ status:"failure",msg:"unable to create account" });
     }
 });
-app.get("*", (req,res) => {
-  res.sendFile("./client/build/index.html");
-});
+// app.get("*", (req,res) => {
+//   res.sendFile("./client/build/index.html");
+// });
 app.listen(3333,()=>{
     console.log("Listening to port 3333")
 })
